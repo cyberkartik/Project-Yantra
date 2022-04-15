@@ -6,6 +6,10 @@ We made two robots which through communication would advance the supply chain ma
 
 We are a team purely made of first years . We strive to make innovations in the field of Internet of Things (IoT).
 
+## Inspiration 
+
+The purpose of our study is to research and identify intrinsic and extrinsic motivations but also their impact on the behavioral intentions of using Internet of Things (IoT) solutions among company managers in India in the future. The research method used in the quantitative study was the sample survey.
+
 ## How it works
 
 -> Robot R1 moves the test payload P from the initial area to checkpoint CP-1. <br />
@@ -60,9 +64,3 @@ TO BE UPDATED
 ## Working Model 
 
 TO BE UPDATED
-
-## Inspiration 
-
-The purpose of our study is to research and identify intrinsic and extrinsic motivations but also their impact on the behavioral intentions of using Internet of Things (IoT) solutions among company managers in India in the future. The research method used in the quantitative study was the sample survey.
-
- 

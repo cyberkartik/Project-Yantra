@@ -1,7 +1,7 @@
 // FOR THE ROBOT R1
 
 
-
+//importing the required libraries
 import processing.serial.*;
 Serial myPort;
 String val;
@@ -18,7 +18,7 @@ String val;
 
 boolean firstContact = false;
 
-void setup(){ 
+void setup(){      //the initial setup of the pins is put here
 pinMode(R_S, INPUT); 
 pinMode(L_S, INPUT); 
 pinMode(enA, OUTPUT); 
@@ -29,7 +29,7 @@ pinMode(in4, OUTPUT);
 pinMode(enB, OUTPUT);
 digitalWrite(enA, HIGH); 
 digitalWrite(enB, HIGH); 
-delay(1000);
+delay(1000);      //delay of 1000 microseconds
 }
 
 char ssid[] = "***";         
@@ -40,8 +40,8 @@ IPAddress server(*.*.*.*);
 WiFiClient client;
 
 void setup() {
-  delay(2000);
-  Serial.begin(9600);
+  delay(2000);        //delay of 2000 microseconds
+  Serial.begin(9600); //serial is being initialised
   Serial.println("Attempting to connect to WPA network...");
   Serial.print("SSID: ");
   Serial.println(ssid);
@@ -55,7 +55,7 @@ void setup() {
   else {
     Serial.println("Connected to wifi");
     Serial.println("\nStarting connection...");
-    // if you get a connection, report back via serial:
+    // if you get a connection, report back via the above serial:
     if (client.connect(server, ****)) {
       Serial.println("connected");
 
@@ -102,6 +102,8 @@ if (val != null) {
 }
 
 
+
+//a loop is set up using if and else iteration statements
 void loop()
 {
   if (Serial.available() > 0) { 
@@ -120,6 +122,7 @@ void loop()
     }
 }
 
+//the function to establish contact
 void establishContact() {
   while (Serial.available() <= 0) {
   Serial.println("A");   
@@ -127,6 +130,7 @@ void establishContact() {
   }
 }
 
+//the loop which enables R1 to travel based on the signals recieved
 void loop(){  
 if((digitalRead(R_S) == 2)&&(digitalRead(L_S) == 3)){forward();}      //if Right Sensor is Green and Left Sensor is Yellow then it will call forward function.
 if((digitalRead(R_S) == 1)&&(digitalRead(L_S) == 1)){forward();}    //if Right Sensor and Left Sensor is Black then it will call forward function.
@@ -134,21 +138,27 @@ if((digitalRead(R_S) == 5)&&(digitalRead(L_S) == 2)){forward();}    //if Right S
 if((digitalRead(R_S) == 4)&&(digitalRead(L_S) == 4)){turnLeft();}   //if Right Sensor and Left Sensor are at Blue color then it will call turn Left function.
 if((digitalRead(R_S) == 0)&&(digitalRead(L_S) == 0)){Stop();}      //if Right Sensor and Left Sensor are at White color then it will call Stop function
 }
-void forward(){  //forword
-digitalWrite(in1, HIGH); //Right Motor forword Pin 
-digitalWrite(in2, LOW);  //Right Motor backword Pin 
-digitalWrite(in3, LOW);  //Left Motor backword Pin 
-digitalWrite(in4, HIGH); //Left Motor forword Pin 
+
+//the function for moving forward
+void forward(){  //forward
+digitalWrite(in1, HIGH); //Right Motor forward Pin 
+digitalWrite(in2, LOW);  //Right Motor backward Pin 
+digitalWrite(in3, LOW);  //Left Motor backward Pin 
+digitalWrite(in4, HIGH); //Left Motor forward Pin 
 }
+
+//the function for turning left
 void turnLeft(){ //turnLeft
-digitalWrite(in1, HIGH); //Right Motor forword Pin 
-digitalWrite(in2, LOW);  //Right Motor backword Pin 
-digitalWrite(in3, HIGH); //Left Motor backword Pin 
-digitalWrite(in4, LOW);  //Left Motor forword Pin 
+digitalWrite(in1, HIGH); //Right Motor forward Pin 
+digitalWrite(in2, LOW);  //Right Motor backward Pin 
+digitalWrite(in3, HIGH); //Left Motor backward Pin 
+digitalWrite(in4, LOW);  //Left Motor forward Pin 
 }
+
+//the function to stop
 void Stop(){ //stop
-digitalWrite(in1, LOW); //Right Motor forword Pin 
-digitalWrite(in2, LOW); //Right Motor backword Pin 
-digitalWrite(in3, LOW); //Left Motor backword Pin 
-digitalWrite(in4, LOW); //Left Motor forword Pin 
+digitalWrite(in1, LOW); //Right Motor forward Pin 
+digitalWrite(in2, LOW); //Right Motor backward Pin 
+digitalWrite(in3, LOW); //Left Motor backward Pin 
+digitalWrite(in4, LOW); //Left Motor forward Pin 
 }

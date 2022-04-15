@@ -33,6 +33,10 @@ TO BE UPDATED
 
 TO BE UPDATED
 
+## Working Model 
+
+TO BE UPDATED
+
 ## Inspiration 
 
 The purpose of our study is to research and identify intrinsic and extrinsic motivations but also their impact on the behavioral intentions of using Internet of Things (IoT) solutions among company managers in India in the future. The research method used in the quantitative study was the sample survey.

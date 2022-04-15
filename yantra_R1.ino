@@ -1,6 +1,12 @@
 // FOR THE ROBOT R1
 
 
+
+import processing.serial.*;
+Serial myPort;
+String val;
+#include <SPI.h>
+#include <WiFi101.h>
 #define enA 5//Enable1 L293 Pin enA 
 #define in1 6 //Motor1  L293 Pin in1 
 #define in2 7 //Motor1  L293 Pin in1 
@@ -9,6 +15,9 @@
 #define enB 8 //Enable2 L293 Pin enB 
 #define R_S 4//colour sensor Right
 #define L_S 4 //colour sensor Left
+
+boolean firstContact = false;
+
 void setup(){ 
 pinMode(R_S, INPUT); 
 pinMode(L_S, INPUT); 
@@ -23,6 +32,100 @@ digitalWrite(enB, HIGH);
 delay(1000);
 }
 
+char ssid[] = "***";         
+
+int status = WL_IDLE_STATUS;
+IPAddress server(*.*.*.*);
+
+WiFiClient client;
+
+void setup() {
+  delay(2000);
+  Serial.begin(9600);
+  Serial.println("Attempting to connect to WPA network...");
+  Serial.print("SSID: ");
+  Serial.println(ssid);
+
+  status = WiFi.begin(ssid);
+  if ( status != WL_CONNECTED) { 
+    Serial.println("Couldn't get a wifi connection");
+    // don't do anything else:
+    while(true);
+  } 
+  else {
+    Serial.println("Connected to wifi");
+    Serial.println("\nStarting connection...");
+    // if you get a connection, report back via serial:
+    if (client.connect(server, ****)) {
+      Serial.println("connected");
+
+      client.println();
+      client.flush();
+    }
+  }
+}
+void draw()
+{
+  if ( myPort.available() > 0) 
+  {
+  val = myPort.readStringUntil('\n');
+  } 
+println(val);
+}
+void serialEvent( Serial myPort) {
+val = myPort.readStringUntil('\n');
+if (val != null) {
+  val = trim(val);
+  println(val);
+ 
+  if (firstContact == false) {
+    if (val.equals("A")) {
+      myPort.clear();
+      firstContact = true;
+      myPort.write("A");
+      println("contact");
+    }
+  }
+  else { 
+    println(val);
+
+    if (mousePressed == true) 
+    {                           
+      myPort.write('1');        
+      println("1");
+    }
+
+ 
+    myPort.write("A");
+    }
+  }
+}
+
+
+void loop()
+{
+  if (Serial.available() > 0) { 
+    val = Serial.read(); 
+
+    if(val == '1') 
+    {
+       ledState = !ledState; 
+       digitalWrite(ledPin, ledState); 
+    }
+    delay(100);
+  } 
+    else {
+    Serial.println("Hello, world!"); 
+    delay(50);
+    }
+}
+
+void establishContact() {
+  while (Serial.available() <= 0) {
+  Serial.println("A");   
+  delay(300);
+  }
+}
 
 void loop(){  
 if((digitalRead(R_S) == 2)&&(digitalRead(L_S) == 3)){forward();}      //if Right Sensor is Green and Left Sensor is Yellow then it will call forward function.

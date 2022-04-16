@@ -55,12 +55,20 @@ This will help us drastically reduce the time which is otherwise wasted in trans
 
 ## Challenges We Faced
 
-TO BE UPDATED
+Main challenge was in designing the track on which our project would work, Next big issue was weight balancing for the bots as speed plays a vital role in the project.
 
 ## Debugging
 
-TO BE UPDATED
+We debugged the code a few times to get rid of any discrepancy that hindered its ideal functioning i.e, no path deviation and successful payload delivery.
 
 ## Working Model 
 
-TO BE UPDATED
+Given in the 'YouTube Links' section.
+
+## YouTube Links
+
+-> Channel Link: https://www.youtube.com/channel/UCgx04vFbDaXa-WpoFjukyLA <br />
+-> Successful Run: https://www.youtube.com/watch?v=aROKxgf4bHk <br />
+-> Trial 1: https://www.youtube.com/watch?v=zlyqvkTgqdU <br />
+-> Trial 2: https://www.youtube.com/watch?v=zA6R6tysKzg <br />
+-> Trial 3: https://www.youtube.com/watch?v=H7qt9cAC9Zk <br />

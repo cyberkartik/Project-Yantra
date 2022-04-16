@@ -67,8 +67,8 @@ Given in the 'YouTube Links' section.
 
 ## YouTube Links
 
--> Channel Link: https://www.youtube.com/channel/UCgx04vFbDaXa-WpoFjukyLA
--> Successful Run: https://www.youtube.com/watch?v=aROKxgf4bHk
--> Trial 1: https://www.youtube.com/watch?v=zlyqvkTgqdU
--> Trial 2: https://www.youtube.com/watch?v=zA6R6tysKzg
--> Trial 3: https://www.youtube.com/watch?v=H7qt9cAC9Zk
+-> Channel Link: https://www.youtube.com/channel/UCgx04vFbDaXa-WpoFjukyLA <br />
+-> Successful Run: https://www.youtube.com/watch?v=aROKxgf4bHk <br />
+-> Trial 1: https://www.youtube.com/watch?v=zlyqvkTgqdU <br />
+-> Trial 2: https://www.youtube.com/watch?v=zA6R6tysKzg <br />
+-> Trial 3: https://www.youtube.com/watch?v=H7qt9cAC9Zk <br />
